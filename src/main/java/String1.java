@@ -213,8 +213,8 @@ public class String1
      * hasBad("xxbadxx") → false
      */
     public boolean hasBad(String str) {
-         String1 = ("bad");
-        if (str.indexOf(String1) == 0 || str.indexOf(String1) == 1) {
+        String myString = ("bad");
+        if (str.indexOf(myString) == 0 || str.indexOf(myString) == 1) {
         return true;
     }
     else {
