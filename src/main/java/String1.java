@@ -231,7 +231,12 @@ public class String1
      * conCat("abc", "") → "abc"
      */
     public String conCat(String a, String b) {
-        return unimplemented;
+        if ((a.substring(a.length() - 1, a.length())).equals(b.substring(0,1))){
+            return a + b.substring(1,b.length());
+        }
+        else {
+            return a + b;
+        }
     }
 
     /*
@@ -245,7 +250,8 @@ public class String1
      *minCat("java", "Hello") → "javaello"
      */
     public String minCat(String a, String b) {
-        return unimplemented;
+        int cat = Math.min(a.length(), b.length());
+        return a.substring(a.length() - cat) + b.substring(b.length() - cat);
     }
 
     /*
@@ -256,7 +262,14 @@ public class String1
      * withoutX("Hxix") → "Hxi"
      */
     public String withoutX(String str) {
-        return unimplemented;
+        String answer = str;
+        if(answer.substring(str.length()-1).equals("x"))  {
+            answer = answer.substring(0,str.length()-1);
+      } 
+      if(answer.substring(0,1).equals("x")) {
+          answer = answer.substring(1);
+      }
+      return answer;
     }
 
     /*
@@ -268,8 +281,39 @@ public class String1
      * deFront("java") → "va"
      * deFront("away") → "aay"
      */
-    public String deFront(String str) {    
-        return unimplemented;
+    public String deFront(String str) {
+        String answer = str;
+        if(!answer.substring(0,1).equals("a") && !answer.substring(1,2).equals("b")) {
+            answer = str.substring(2);
+        }
+        else if(!answer.substring(0,1).equals("a")){
+            answer = str.substring(1);
+        }
+        else if(!answer. substring(1,2).equals("b")){
+            answer = str.substring(0,1) + str.substring(2);
+        }
+        return answer;
     }
 
 }
+
+//Paste console output below:
+/*
+Hello Bob!
+HiByeByeHi
+<i>Yay</i>
+<<Yay>>
+lololo
+He
+Woo
+ell
+hiHellohi
+and
+HeHeHe
+lloHe
+true
+abcat
+loHi
+Hi
+llo
+*/
