@@ -231,6 +231,8 @@ public class String1
      * conCat("abc", "") → "abc"
      */
     public String conCat(String a, String b) {
+        //This line will create an index out of bounds error if b is an empty string.
+        //You might want to check the length of b before doing this check.
         if ((a.substring(a.length() - 1, a.length())).equals(b.substring(0,1))){
             return a + b.substring(1,b.length());
         }
